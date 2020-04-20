@@ -9,7 +9,7 @@ def convert_transaction_to_user(df, recency_end_date=None):
     df[date_col] = pd.to_datetime(df[date_col])
 
     if recency_end_date is not None:
-        end_date = recency_end_date
+        end_date = datetime.strptime(recency_end_date, '%m/%d/%Y')
     elif recency_end_date is None:
         end_date = datetime.today()
 
