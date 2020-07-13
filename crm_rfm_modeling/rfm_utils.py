@@ -60,8 +60,8 @@ def build_cutoffs(dataset, variable, func):
                 divider = func(dataset_copy[variable])
                 calc_list.append(divider)
                 dataset_copy = dataset_copy[dataset_copy[variable] >= divider]
-            mn = dataset_copy[variable].min()
-            mx = dataset_copy[variable].max()
+            mn = dataset[variable].min()
+            mx = dataset[variable].max()
             cutoffs = [(mn, calc_list[0]),
                        (calc_list[0], calc_list[1]),
                        (calc_list[1], calc_list[2]),
@@ -73,8 +73,8 @@ def build_cutoffs(dataset, variable, func):
                 divider = func(dataset_copy[variable])
                 calc_list.append(divider)
                 dataset_copy = dataset_copy[dataset_copy[variable] <= divider]
-            mn = dataset_copy[variable].min()
-            mx = dataset_copy[variable].max()
+            mn = dataset[variable].min()
+            mx = dataset[variable].max()
             cutoffs = [(mx, calc_list[3]),
                        (calc_list[3], calc_list[2]),
                        (calc_list[2], calc_list[1]),
