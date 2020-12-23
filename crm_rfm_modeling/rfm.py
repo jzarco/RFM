@@ -107,7 +107,7 @@ class RFM:
                 raise ValueError('Error: expected 3 columns for dataset type of '+ self.dataset_type +'; received: ' + str(data.shape[1]))
 
         if self.dataset_type == 'transactional':
-            self.data = convert_transaction_to_user(self.data, recency_end_date=recency_end_date)
+            self.data = convert_transaction_to_user(self.data, recency_end_date=self.recency_end_date)
 
         #### Scoring Section
         #Retrieving the indexes for each R-F-M categorized within each dictionary for each score
